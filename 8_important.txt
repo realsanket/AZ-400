@@ -1,0 +1,71 @@
+Important Points
+Understanding Azure Pipelines
+
+Azure Pipelines can be used to automate your build and your release processes. At the moment we have looked at the Continuous Integration process that can be done with Azure Pipelines. Later on we will look at Continuous Delivery with the help of Azure Pipelines.
+
+
+In Azure Pipelines, you have many stages. Each stage is a logical boundary in the pipeline.
+
+In each stage you can have a set of jobs
+
+
+Each job can consist of PowerShell/Bash scripts or tasks
+
+
+Microsoft-Hosted agents and Self-Hosted agents
+
+Remember , you have various Microsoft Hosted agents that can be used to run your builds.
+
+https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops&tabs=yaml
+
+If these agents don't meet the build requirements of your application, you can decide to create your own self-hosted agent.
+
+Code Coverage Tools
+
+You can use Code Coverage tools to get a better idea on what code is not executed and required for your application.
+
+For .Net based applications, you can use the .Net Core CLI task to generate code coverage reports.
+
+For Java based applications, you can use the Cobertura tool
+
+https://cobertura.github.io/cobertura/
+
+
+
+Technical Debt
+
+This could be anything that could slow or hinder the entire development process.
+
+Especially when it comes to developing code, the amount of technical debt can increase over time.
+
+As the Technical Debt increases , it can become more difficult to make changes to code.
+
+What are the situations that can cause technical debt
+
+When developers are under pressure to deliver and the application code is not up to the mark.
+
+Over time because of improper code , subsequent changes to code that uses bad coding practices can become more difficult.
+
+When the design of the application is not done properly.
+
+Then the subsequent code base will not be proper as well.
+
+When reviews are not conducted or refactoring – This helps to see how the code can be improved.
+
+Writing complex code that becomes difficult to change later on.
+
+Using Code Quality tools
+
+Remember , you can use SonarCloud and SonarQube tools for measuring code quality
+
+https://sonarcloud.io/
+
+https://www.sonarqube.org/
+
+Static Code Analysis Tools
+
+There are various Static Code Analysis Tools
+
+For Java you have PMD - https://pmd.github.io/
+
+For .Net you can use Visual Studio itself - https://docs.microsoft.com/en-us/visualstudio/code-quality/roslyn-analyzers-overview?view=vs-2019
