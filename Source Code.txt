@@ -1,0 +1,34 @@
+Important Points
+Important Points for the section
+1. Git commands
+For all of the Git commands, you can go through the following link
+
+https://git-scm.com/docs
+
+The important commands are
+
+git init - This is to initialize an empty repository
+
+git add - This is to add files to the staging area from your working directory
+
+git commit - This is to commit files onto git
+
+git push - This is to push changes onto a remote repository
+
+git pull - This is to pull changes from a git repository
+
+git branch - This is for listing, creating and deleting branches
+
+git checkout - You can switch between branches with this command
+
+2. Remember all the merge processes especially the squash merge
+https://docs.microsoft.com/en-us/azure/devops/repos/git/merging-with-squash?view=azure-devops
+
+3. Other configuration management tools
+Giving the link for other configuration management tools
+
+Bitbucket - https://bitbucket.org/product
+
+Apache subversion - https://subversion.apache.org/
+
+GitHub Enterprise - https://github.com/enterprise

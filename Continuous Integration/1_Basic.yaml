@@ -1,0 +1,7 @@
+Configuration 1
+
+pool:
+  vmImage: 'ubuntu-latest'
+ 
+steps:
+- bash: echo "Our First Pipeline"
