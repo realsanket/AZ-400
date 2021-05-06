@@ -1,0 +1,31 @@
+The Custom Script Extension downloads and executes scripts on Azure virtual machines. 
+This extension is useful for post deployment configuration, software installation, or any other configuration or management tasks.
+
+STEPS:-
+1-create a storage account and store your file into that
+2-file extension should be .ps1
+3-Place the script in the file
+4-GO to VM configuration and select extension option
+5- upload the file
+
+===================================================================================
+Custom Script Extensions - Resources
+
+
+You can use the following as a reference for the previous chapter
+
+Create a file named IIS.ps1 with the following contents.
+
+import-module servermanager
+add-windowsfeature web-server -includeallsubfeature
+If you are a windows local machine , create a file in notepad
+
+Add the above contents
+
+And then save the file as a PowerShell file
+
+1) Choose the Save as type as "All Files"
+
+2) Next give the file name as "IIS.ps1"
+
+

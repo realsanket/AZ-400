@@ -1,0 +1,17 @@
+Lab - Azure Automation - Maintain VM Configuration
+You can use the following as a reference for the previous chapter
+
+Create a file name NewConfig.ps1 file and add the following contents
+
+configuration NewConfig
+{
+    Node AllNodes
+    {
+        WindowsFeature IIS
+        {
+            Ensure               = 'Present'
+            Name                 = 'Web-Server'
+            IncludeAllSubFeature = $true
+        }
+    }
+}
