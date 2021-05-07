@@ -1,0 +1,57 @@
+app.yaml=>
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-image
+        image: appregistry6000.azurecr.io/dotnetapp
+        ports:
+        - containerPort: 5000
+------------------------------------------------------------------------
+Service.yaml=>
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 5000
+  selector:
+    app: my-app
+----------------------------------------------------------------------
+
+Command.txt=>
+kubectl delete services nginx-service
+
+kubectl delete deployment nginx-deployment
+
+$AKS_RESOURCE_GROUP="kubernetesgrp"
+$AKS_CLUSTER_NAME="democluster"
+$ACR_RESOURCE_GROUP="demogrp1"
+$ACR_NAME="appregistry6000"
+
+
+$CLIENT_ID=$(az aks show --resource-group $AKS_RESOURCE_GROUP --name $AKS_CLUSTER_NAME --query "servicePrincipalProfile.clientId" --output tsv)
+
+$ACR_ID=$(az acr show --name $ACR_NAME --resource-group $ACR_RESOURCE_GROUP --query "id" --output tsv)
+
+az role assignment create --assignee $CLIENT_ID --role acrpull --scope $ACR_ID
+
+kubectl apply -f app.yml
+
+kubectl apply -f service.yml
+
+kubectl get service my-service --watch
+--------------------------------------------------------------------------------------------------------------
